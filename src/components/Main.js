@@ -4,6 +4,7 @@ import Login from './Login'
 import Home from './Home';
 import News from './News'
 import Profile from './Profile'
+import PrivateRoute from './PrivateRouter';
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -18,7 +19,7 @@ class Main extends React.Component {
           <Route exact path='/' component={Home}/>
           <Route path='/login' component={Login}/>
           <Route path='/news' component={News}/>
-          <Route path='/profile' component={Profile}/>
+          <PrivateRoute path="/profile" component={Profile} />
         </Switch>
       </main>
     )
