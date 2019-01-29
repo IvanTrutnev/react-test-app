@@ -1,9 +1,9 @@
-import React from 'react'
-import { Switch, Route } from 'react-router-dom'
-import Login from './Login'
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Login from './Login';
 import Home from './Home';
-import News from './News'
-import Profile from './Profile'
+import News from './News';
+import Profile from './Profile';
 import PrivateRoute from './PrivateRouter';
 
 // The Main component renders one of the three provided
@@ -12,18 +12,18 @@ import PrivateRoute from './PrivateRouter';
 // with /roster or /schedule. The / route will only match
 // when the pathname is exactly the string "/"
 class Main extends React.Component {
-  render() {
-    return (
-      <main>
-        <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route path='/login' component={Login}/>
-          <Route path='/news' component={News}/>
-          <PrivateRoute path="/profile" component={Profile} />
-        </Switch>
-      </main>
-    )
-  }
+	render() {
+		return (
+			<main>
+				<Switch>
+					<Route exact path="/" component={Home} />
+					<Route path="/login" component={Login} />
+					<Route path="/news" component={News} />
+					<PrivateRoute path="/profile" component={Profile} />
+				</Switch>
+			</main>
+		);
+	}
 }
 
-export default Main
+export default Main;
