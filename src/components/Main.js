@@ -13,13 +13,14 @@ import PrivateRoute from './PrivateRouter';
 // when the pathname is exactly the string "/"
 class Main extends React.Component {
 	render() {
+		const { user } = this.props;
 		return (
 			<main>
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route path="/login" component={Login} />
 					<Route path="/news" component={News} />
-					<PrivateRoute path="/profile" component={Profile} />
+					<PrivateRoute user={user} path="/profile" component={Profile} />
 				</Switch>
 			</main>
 		);

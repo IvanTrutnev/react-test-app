@@ -8,7 +8,9 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(() => {}, {});
+import { initialState, rootReducer } from './reducers';
+
+const store = createStore(rootReducer, initialState);
 
 ReactDOM.render(
 	<Provider store={store}>
