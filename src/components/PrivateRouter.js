@@ -2,10 +2,9 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { fakeAuth } from '../helpers/fakeAuth';
 
-function PrivateRoute({ component: Component, ...rest }) {
+function PrivateRoute({ component: Component}) {
 	return (
 		<Route
-			{...rest}
 			render={(props) =>
 				fakeAuth.isAuthenticated ? (
 					<Component {...props} />
