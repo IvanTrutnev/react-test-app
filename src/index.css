@@ -22,3 +22,11 @@ code {
 .navigation > ul > li {
     margin-left: 5px;
 }
+
+label {
+  margin-right: 30px;
+}
+
+.error {
+  color: red;
+}

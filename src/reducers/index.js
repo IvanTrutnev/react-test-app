@@ -1,6 +1,6 @@
 export const initialState = {
 	user: {
-		isAuth: true
+		isAuth: false
 	}
 };
 
