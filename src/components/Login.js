@@ -9,11 +9,12 @@ class Login extends React.Component {
 	};
 	handleSubmit = (e) => {
     e.preventDefault();
-
 		if (this.state.username !== fakeAuth.username || this.state.password !== fakeAuth.password) {
 			this.setState({ error: 'Имя пользователя или пароль введены не верно' });
 		} else {
       this.setState({ error: '' });
+      this.props.setAuth();
+      this.props.history.push('/profile');
     }
 		console.log(this.state);
 	};
