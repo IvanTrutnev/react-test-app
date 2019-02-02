@@ -4,6 +4,7 @@ import Login from './Login';
 import Home from './Home';
 import News from './News';
 import Profile from './Profile';
+import NotFound from './NotFound'
 import PrivateRoute from './PrivateRouter';
 import LoginWrapper from '../containers/LoginWrapper';
 
@@ -17,6 +18,7 @@ class Main extends React.Component {
 					<LoginWrapper path="/login" component={Login} setAuth={setAuth} />
 					<Route path="/news" component={News} />
 					<PrivateRoute user={user} path="/profile" component={Profile} />
+          <Route component={NotFound}></Route>
 				</Switch>
 			</main>
 		);
