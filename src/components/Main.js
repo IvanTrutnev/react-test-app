@@ -4,21 +4,21 @@ import Login from './Login';
 import Home from './Home';
 import News from './News';
 import Profile from './Profile';
-import NotFound from './NotFound'
+import NotFound from './NotFound';
 import PrivateRoute from './PrivateRouter';
 import LoginWrapper from '../containers/LoginWrapper';
 
 class Main extends React.Component {
 	render() {
-		const { user, setAuth } = this.props;
+		const { user } = this.props;
 		return (
 			<main>
 				<Switch>
 					<Route exact path="/" component={Home} />
-					<LoginWrapper path="/login" component={Login} setAuth={setAuth} />
+					<LoginWrapper path="/login" component={Login} />
 					<Route path="/news" component={News} />
 					<PrivateRoute user={user} path="/profile" component={Profile} />
-          <Route component={NotFound}></Route>
+					<Route component={NotFound} />
 				</Switch>
 			</main>
 		);

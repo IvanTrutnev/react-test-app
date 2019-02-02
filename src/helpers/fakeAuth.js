@@ -1,4 +1,4 @@
 export const fakeAuth = {
-	username: 'Admin',
+	username: 'admin',
 	password: '12345'
 };

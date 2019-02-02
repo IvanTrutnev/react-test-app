@@ -1,14 +1,10 @@
-import React from 'react';
-import { Route } from 'react-router';
+import { connect } from 'react-redux'
+import { setAuth } from '../actions/Login'
+import Login from '../components/Login'
 
-function LoginWrapper({ component: Component, ...rest }) {
-  return (
-		<Route
-			render={(props) =>
-					<Component {...props} setAuth={rest.setAuth}/>
-				}
-		/>
-	);
-}
 
-export default LoginWrapper;
+const mapDispatchToProps = dispatch => ({
+  setAuth: () => dispatch(setAuth(true)),
+})
+
+export default connect(null, mapDispatchToProps)(Login)

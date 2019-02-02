@@ -1,5 +1,6 @@
 import React from 'react';
 import { fakeAuth } from '../helpers/fakeAuth';
+import { withRouter } from 'react-router-dom';
 
 class Login extends React.Component {
 	state = {
@@ -8,15 +9,14 @@ class Login extends React.Component {
 		error: ''
 	};
 	handleSubmit = (e) => {
-    e.preventDefault();
+		e.preventDefault();
 		if (this.state.username !== fakeAuth.username || this.state.password !== fakeAuth.password) {
 			this.setState({ error: 'Имя пользователя или пароль введены не верно' });
 		} else {
-      this.setState({ error: '' });
-      this.props.setAuth();
-      this.props.history.push('/profile');
-    }
-		console.log(this.state);
+			this.setState({ error: '' });
+			this.props.setAuth();
+			this.props.history.push('/profile');
+		}
 	};
 	render() {
 		return (
@@ -51,4 +51,4 @@ class Login extends React.Component {
 	}
 }
 
-export default Login;
+export default withRouter(Login);
