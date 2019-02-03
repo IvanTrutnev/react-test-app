@@ -7,7 +7,15 @@ class Login extends React.Component {
 		username: '',
 		password: '',
 		error: ''
-	};
+  };
+  handleChange = (e) => {
+    const value = e.currentTarget.value
+    const fieldName = e.currentTarget.dataset.fieldName
+    this.setState(prev => ({
+      ...prev,
+      [fieldName]: value,
+    }))
+  }
 	handleSubmit = (e) => {
 		e.preventDefault();
 		if (this.state.username !== fakeAuth.username || this.state.password !== fakeAuth.password) {
@@ -29,8 +37,9 @@ class Login extends React.Component {
 							type="text"
 							name="name"
 							value={this.state.username}
-							placeholder="Enter username"
-							onChange={(e) => this.setState({ username: e.target.value })}
+              placeholder="Enter username"
+              data-field-name={'username'}
+              onChange={this.handleChange}
 						/>
 					</div>
 					<div>
@@ -39,8 +48,9 @@ class Login extends React.Component {
 							type="text"
 							name="password"
 							value={this.state.password}
-							placeholder="Enter password"
-							onChange={(e) => this.setState({ password: e.target.value })}
+              placeholder="Enter password"
+              data-field-name={'password'}
+              onChange={this.handleChange}
 						/>
 					</div>
 					<input type="submit" value="Submit" />
