@@ -5,19 +5,18 @@ import Home from './Home';
 import News from './News';
 import Profile from './Profile';
 import NotFound from './NotFound';
-import PrivateRoute from './PrivateRouter';
+import PrivateRoute from '../containers/PrivateRouter';
 import LoginWrapper from '../containers/LoginWrapper';
 
 class Main extends React.Component {
 	render() {
-		const { user } = this.props;
 		return (
 			<main>
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<LoginWrapper path="/login" component={Login} />
 					<Route path="/news" component={News} />
-					<PrivateRoute user={user} path="/profile" component={Profile} />
+					<PrivateRoute path="/profile" component={Profile} />
 					<Route component={NotFound} />
 				</Switch>
 			</main>
