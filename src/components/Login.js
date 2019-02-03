@@ -1,6 +1,7 @@
 import React from 'react';
 import { fakeAuth } from '../helpers/fakeAuth';
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Login extends React.Component {
 	state = {
@@ -59,6 +60,10 @@ class Login extends React.Component {
 			</div>
 		);
 	}
+}
+
+Login.propTypes = {
+  setAuth: PropTypes.func.isRequired,
 }
 
 export default withRouter(Login);
